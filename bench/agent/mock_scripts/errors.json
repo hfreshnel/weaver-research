@@ -1,0 +1,20 @@
+{
+ "list_documents": [
+  {
+   "http_error": 500,
+   "body": "{\"error\":{\"code\":500,\"message\":\"Failed to parse tool call arguments as JSON: parse error\",\"type\":\"server_error\"}}"
+  }
+ ],
+ "reminder_tomorrow": [
+  {
+   "http_error": 503,
+   "body": "{\"error\":{\"code\":503,\"message\":\"Loading model\"}}"
+  }
+ ],
+ "archive_photos": [
+  {
+   "http_error": 400,
+   "body": "{\"error\":{\"code\":400,\"message\":\"request (8294 tokens) exceeds the available context size (8192 tokens), try increasing it\",\"type\":\"exceed_context_size_error\"}}"
+  }
+ ]
+}

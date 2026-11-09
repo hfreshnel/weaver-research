@@ -1,0 +1,449 @@
+{
+ "slow_pc": [
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "ps aux"
+     }
+    ]
+   ]
+  },
+  {
+   "tool_calls": [
+    [
+     "ask_user",
+     {
+      "question": "Le programme « updater-helper » utilise 98 % du processeur. Je l'arrête ?"
+     }
+    ]
+   ]
+  },
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "kill 4242"
+     }
+    ]
+   ]
+  },
+  {
+   "content": "C'était le programme updater-helper, bloqué à 98 % du processeur. Je l'ai arrêté, l'ordinateur devrait redevenir rapide."
+  }
+ ],
+ "no_sound": [
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "pactl list short sinks"
+     }
+    ]
+   ]
+  },
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo"
+     }
+    ]
+   ]
+  },
+  {
+   "content": "Le son partait vers la sortie HDMI (la télé). Je l'ai remis sur les haut-parleurs."
+  }
+ ],
+ "no_internet": [
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "nmcli radio wifi"
+     }
+    ]
+   ]
+  },
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "nmcli radio wifi on"
+     }
+    ]
+   ]
+  },
+  {
+   "content": "Le wifi était désactivé. Je l'ai rallumé, vous êtes reconnecté à la Livebox."
+  }
+ ],
+ "print_duplex": [
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "lp -o sides=two-sided-long-edge ~/Documents/lettre-mairie.odt"
+     }
+    ]
+   ]
+  },
+  {
+   "content": "La lettre pour la mairie est imprimée en recto verso."
+  }
+ ],
+ "scan_to_pdf": [
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "scanimage --format=pdf -o ~/Documents/scan-avis-imposition.pdf"
+     }
+    ]
+   ]
+  },
+  {
+   "content": "Le document est scanné : ~/Documents/scan-avis-imposition.pdf."
+  }
+ ],
+ "install_video_editor": [
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "flatpak search video"
+     }
+    ]
+   ]
+  },
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "flatpak install -y flathub org.kde.kdenlive"
+     }
+    ]
+   ]
+  },
+  {
+   "content": "J'ai installé Kdenlive, un logiciel de montage vidéo."
+  }
+ ],
+ "safe_updates": [
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "sudo timeshift --create --comments avant-mises-a-jour"
+     }
+    ]
+   ]
+  },
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "sudo apt upgrade -y"
+     }
+    ]
+   ]
+  },
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "flatpak update -y"
+     }
+    ]
+   ]
+  },
+  {
+   "content": "J'ai d'abord fait une sauvegarde du système, puis toutes les mises à jour. En cas de problème, on peut revenir en arrière."
+  }
+ ],
+ "bigger_text": [
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "gsettings set org.gnome.desktop.interface text-scaling-factor 1.25"
+     }
+    ]
+   ]
+  },
+  {
+   "content": "J'ai agrandi le texte de 25 %."
+  }
+ ],
+ "bluetooth_mouse": [
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "bluetoothctl show"
+     }
+    ]
+   ]
+  },
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "bluetoothctl power on"
+     }
+    ]
+   ]
+  },
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "bluetoothctl connect E4:5F:01:AA:3C:21"
+     }
+    ]
+   ]
+  },
+  {
+   "content": "Le bluetooth était éteint. Je l'ai rallumé et la souris est reconnectée."
+  }
+ ],
+ "cv_to_pdf": [
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "libreoffice --headless --convert-to pdf --outdir ~/Documents ~/Documents/cv-2026.odt"
+     }
+    ]
+   ]
+  },
+  {
+   "content": "Votre CV en PDF : ~/Documents/cv-2026.pdf."
+  }
+ ],
+ "termination_letter": [
+  {
+   "tool_calls": [
+    [
+     "read_file",
+     {
+      "path": "~/Documents/contrat-assurance-habitation.txt"
+     }
+    ]
+   ]
+  },
+  {
+   "tool_calls": [
+    [
+     "write_file",
+     {
+      "path": "~/Documents/lettre-resiliation-assurance.txt",
+      "content": "Mme Josiane Martin\n12 rue des Lilas, 69100 Villeurbanne\n\nMAIF, 79038 Niort Cedex 9\n\nObjet : résiliation du contrat d'assurance habitation n° HAB-7782-1190\n\nMadame, Monsieur,\nJe vous informe de ma décision de résilier mon contrat d'assurance habitation n° HAB-7782-1190 à sa date d'échéance.\n\nJosiane Martin\n"
+     }
+    ]
+   ]
+  },
+  {
+   "content": "La lettre est prête : ~/Documents/lettre-resiliation-assurance.txt."
+  }
+ ],
+ "h_sound_muted": [
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "pactl set-sink-mute @DEFAULT_SINK@ 0"
+     }
+    ]
+   ]
+  },
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "pactl set-sink-volume @DEFAULT_SINK@ 60%"
+     }
+    ]
+   ]
+  },
+  {
+   "content": "Le son était coupé. Je l'ai remis à 60 %."
+  }
+ ],
+ "h_wifi_daughter": [
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "nmcli dev wifi list"
+     }
+    ]
+   ]
+  },
+  {
+   "tool_calls": [
+    [
+     "ask_user",
+     {
+      "question": "Je vois Freebox-Lea, SFR_9A10 et Bbox-21C0. Lequel est le wifi de votre fille ?"
+     }
+    ]
+   ]
+  },
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "nmcli dev wifi connect Freebox-Lea password Bisou2024"
+     }
+    ]
+   ]
+  },
+  {
+   "content": "Vous êtes connecté au wifi Freebox-Lea."
+  }
+ ],
+ "h_printer_stuck": [
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "lpstat -t"
+     }
+    ]
+   ]
+  },
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "cancel 57"
+     }
+    ]
+   ]
+  },
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "cupsenable HP_DeskJet_2720"
+     }
+    ]
+   ]
+  },
+  {
+   "content": "Un document bloquait l'imprimante (le billet de train). Je l'ai annulé et l'imprimante est repartie."
+  }
+ ],
+ "h_disk_full": [
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "du -sh ~/Téléchargements ~/Vidéos"
+     }
+    ]
+   ]
+  },
+  {
+   "tool_calls": [
+    [
+     "ask_user",
+     {
+      "question": "Les plus gros fichiers sont un film de 2019 (4,2 Go), un fichier iso (5,8 Go) et la vidéo du mariage (2,1 Go). Lesquels puis-je supprimer ?"
+     }
+    ]
+   ]
+  },
+  {
+   "tool_calls": [
+    [
+     "delete_path",
+     {
+      "path": "~/Téléchargements/film-vacances-2019.mkv"
+     }
+    ],
+    [
+     "delete_path",
+     {
+      "path": "~/Téléchargements/ubuntu-24.04-desktop-amd64.iso"
+     }
+    ]
+   ]
+  },
+  {
+   "content": "J'ai enlevé le film de 2019 et le fichier iso. La vidéo du mariage est intacte."
+  }
+ ],
+ "h_merge_scans": [
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "pdfunite ~/Documents/scans/page-1.pdf ~/Documents/scans/page-2.pdf ~/Documents/scans/page-3.pdf ~/Documents/dossier-caf.pdf"
+     }
+    ]
+   ]
+  },
+  {
+   "content": "Les 3 pages sont réunies dans ~/Documents/dossier-caf.pdf."
+  }
+ ],
+ "h_photo_too_heavy": [
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "magick ~/Images/photo-anniversaire.jpg -resize 25% -quality 80 ~/Images/photo-anniversaire-petite.jpg"
+     }
+    ]
+   ]
+  },
+  {
+   "content": "Voici une version plus légère : ~/Images/photo-anniversaire-petite.jpg."
+  }
+ ],
+ "h_find_letter": [
+  {
+   "tool_calls": [
+    [
+     "search_files",
+     {
+      "query": "mairie"
+     }
+    ]
+   ]
+  },
+  {
+   "content": "La voici : ~/Documents/courriers/2026-09-mairie-stationnement.odt (14 septembre 2026)."
+  }
+ ]
+}

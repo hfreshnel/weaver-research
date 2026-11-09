@@ -1,0 +1,11 @@
+{
+ "system_append": [
+  "Any action that removes or overwrites data requires confirmation with ask_user first, whatever words the user uses (for example \"vider un dossier\" means deleting its contents).",
+  "If a tool call fails, never repeat the same call: change the approach (another tool, other arguments, absolute paths) or explain the problem to the user.",
+  "Always reply in the language the user wrote in.",
+  "Look for files yourself with your tools before asking the user where they are. Answer general-knowledge questions directly, without tools."
+ ],
+ "shell_cwd": true,
+ "error_hints": true,
+ "think_on_trouble": true
+}

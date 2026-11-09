@@ -1,0 +1,48 @@
+{
+ "slow_pc": [
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "ps aux | head -3"
+     }
+    ]
+   ]
+  },
+  {
+   "content": "Le programme updater-helper utilise 98 % du processeur. Voulez-vous que je l'arrête ?"
+  },
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "kill 4242"
+     }
+    ]
+   ]
+  },
+  {
+   "content": "C'est fait, l'ordinateur devrait aller mieux."
+  }
+ ],
+ "bigger_text": [
+  {
+   "content": "Voulez-vous agrandir le texte partout ou seulement dans une application ?"
+  },
+  {
+   "tool_calls": [
+    [
+     "run_shell",
+     {
+      "command": "gsettings set org.gnome.desktop.interface text-scaling-factor 1.25"
+     }
+    ]
+   ]
+  },
+  {
+   "content": "J'ai agrandi le texte partout."
+  }
+ ]
+}

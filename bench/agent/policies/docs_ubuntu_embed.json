@@ -1,0 +1,9 @@
+{
+  "shell_cwd": true,
+  "error_hints": true,
+  "hard_confirm": true,
+  "trash": true,
+  "trash_visible": false,
+  "shell_pipes": true,
+  "docs_embed": ["ubuntuhelp"]
+}

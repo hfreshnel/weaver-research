@@ -1,0 +1,19 @@
+{
+  "uninstall_app": [
+    {"tool_calls": [["run_shell", {"command": "flatpak list"}]]},
+    {"tool_calls": [["run_shell", {"command": "flatpak uninstall -y net.supertuxkart.SuperTuxKart"}]]},
+    {"content": "J'ai désinstallé le jeu SuperTuxKart."}
+  ],
+  "explain_letter": [
+    {"tool_calls": [["read_file", {"path": "~/Documents/courrier-impots.txt"}]]},
+    {"content": "C'est votre avis d'impôt : il vous reste 312 € à payer, avant le 15/12/2026, sur impots.gouv.fr."}
+  ],
+  "h_bigger_cursor": [
+    {"tool_calls": [["run_shell", {"command": "gsettings set org.gnome.desktop.interface cursor-size 48"}]]},
+    {"content": "J'ai agrandi le pointeur de la souris."}
+  ],
+  "h_scam_mail": [
+    {"tool_calls": [["read_file", {"path": "~/Documents/mail-banque.txt"}]]},
+    {"content": "Ne cliquez surtout pas : c'est une arnaque (hameçonnage). L'adresse n'est pas celle de votre banque."}
+  ]
+}

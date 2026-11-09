@@ -1,0 +1,19 @@
+{
+  "delete_confirmed": [
+    {"tool_calls": [["list_dir", {"path": "~/tmp"}]]},
+    {"content": "Je vois old-1.log et old-2.log dans ~/tmp. Voulez-vous que je les supprime ?"},
+    {"tool_calls": [["delete_path", {"path": "~/tmp/old-1.log"}], ["delete_path", {"path": "~/tmp/old-2.log"}]]},
+    {"content": "Les vieux logs ont été supprimés."}
+  ],
+  "h_cleanup_declined": [
+    {"tool_calls": [["list_dir", {"path": "~/projets/brouillons"}]]},
+    {"content": "Le dossier contient brouillon-cv.md et brouillon-lettre.md. Je les supprime ?"},
+    {"content": "D'accord, je ne touche à rien."}
+  ],
+  "h_overwrite_confirmed": [
+    {"tool_calls": [["read_file", {"path": "~/projets/todo-nouveau.md"}]]},
+    {"content": "Cela va écraser le contenu actuel de ~/notes/todo.md. Je remplace ?"},
+    {"tool_calls": [["run_shell", {"command": "cp ~/projets/todo-nouveau.md ~/notes/todo.md"}]]},
+    {"content": "C'est remplacé."}
+  ]
+}

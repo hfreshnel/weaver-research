@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "system": "You are the assistant layer of a personal computer's operating system. The user's home directory is /home/user. When the request needs an action on the computer or live information, call exactly one appropriate tool. When it does not, answer directly and briefly without calling any tool.",
+  "tools": [
+    {"type": "function", "function": {"name": "list_dir", "description": "List the entries of a directory.", "parameters": {"type": "object", "properties": {"path": {"type": "string", "description": "Absolute or ~-relative directory path."}}, "required": ["path"]}}},
+    {"type": "function", "function": {"name": "read_file", "description": "Read the text content of a file.", "parameters": {"type": "object", "properties": {"path": {"type": "string"}}, "required": ["path"]}}},
+    {"type": "function", "function": {"name": "search_files", "description": "Full-text and filename search over the user's files.", "parameters": {"type": "object", "properties": {"query": {"type": "string"}, "root": {"type": "string", "description": "Directory to search in. Defaults to the home directory."}}, "required": ["query"]}}},
+    {"type": "function", "function": {"name": "run_shell", "description": "Run a shell command and return its output.", "parameters": {"type": "object", "properties": {"command": {"type": "string"}}, "required": ["command"]}}},
+    {"type": "function", "function": {"name": "open_app", "description": "Launch a desktop application by name.", "parameters": {"type": "object", "properties": {"name": {"type": "string"}}, "required": ["name"]}}},
+    {"type": "function", "function": {"name": "create_reminder", "description": "Create a reminder that notifies the user at a given time.", "parameters": {"type": "object", "properties": {"text": {"type": "string"}, "when": {"type": "string", "description": "Natural language or ISO 8601 date-time."}}, "required": ["text", "when"]}}},
+    {"type": "function", "function": {"name": "get_system_status", "description": "Get live machine metrics.", "parameters": {"type": "object", "properties": {"metric": {"type": "string", "enum": ["cpu", "memory", "disk", "battery", "gpu", "processes"]}}, "required": ["metric"]}}},
+    {"type": "function", "function": {"name": "web_search", "description": "Search the web for up-to-date information.", "parameters": {"type": "object", "properties": {"query": {"type": "string"}}, "required": ["query"]}}}
+  ],
+  "cases": [
+    {"id": "list_documents", "prompt": "Montre-moi ce qu'il y a dans mon dossier Documents.",
+     "expect": [{"tool": "list_dir", "args": {"path": {"contains": ["documents"]}}}]},
+    {"id": "reminder_call", "prompt": "Rappelle-moi d'appeler Marie demain à 9h.",
+     "expect": [{"tool": "create_reminder", "args": {"text": {"contains": ["marie"]}, "when": {"contains": ["9"]}}}]},
+    {"id": "disk_space", "prompt": "Combien d'espace disque il me reste ?",
+     "expect": [{"tool": "get_system_status", "args": {"metric": {"equals": "disk"}}},
+                {"tool": "run_shell", "args": {"command": {"contains": ["df"]}}}]},
+    {"id": "open_firefox", "prompt": "Ouvre Firefox.",
+     "expect": [{"tool": "open_app", "args": {"name": {"contains": ["firefox"]}}}]},
+    {"id": "search_invoices", "prompt": "Trouve mes fichiers qui parlent de factures.",
+     "expect": [{"tool": "search_files", "args": {"query": {"contains": ["factur"]}}}]},
+    {"id": "no_tool_capital", "prompt": "Quelle est la capitale de l'Australie ?",
+     "expect": [{"tool": null, "content": {"contains": ["canberra"]}}]},
+    {"id": "ram_usage_en", "prompt": "What's using all my RAM right now?",
+     "expect": [{"tool": "get_system_status", "args": {"metric": {"equals": "processes"}}},
+                {"tool": "get_system_status", "args": {"metric": {"equals": "memory"}}},
+                {"tool": "run_shell", "args": {"command": {"any": ["ps ", "top", "free"]}}}]},
+    {"id": "read_todo", "prompt": "Lis le fichier ~/notes/todo.md et résume-le.",
+     "expect": [{"tool": "read_file", "args": {"path": {"contains": ["notes/todo.md"]}}}]},
+    {"id": "zip_photos", "prompt": "Compresse le dossier ~/photos en un fichier zip.",
+     "expect": [{"tool": "run_shell", "args": {"command": {"contains": ["zip", "photos"]}}}]},
+    {"id": "weather_lyon", "prompt": "Quel temps fera-t-il à Lyon demain ?",
+     "expect": [{"tool": "web_search", "args": {"query": {"contains": ["lyon"]}}}]}
+  ]
+}

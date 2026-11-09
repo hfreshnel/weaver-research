@@ -1,0 +1,3 @@
+3bcbcb9fe608b790b4a495b604f8a0d93419af3d7ea0d5c782a66b298df4709b  gnome-user-docs-fr_46.0-1ubuntu1_all.deb
+ce6c4907acf695d28bbb900ddf98c232cd1bda7142edcc1d13fd1984c66491b1  gnome-user-docs_46.0-1ubuntu1_all.deb
+165c643074d227f3e600ab54bb8e12e7ef1e51660141ce8731eb193046d788b4  ubuntu-docs_24.04.2_all.deb

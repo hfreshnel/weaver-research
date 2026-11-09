@@ -1,0 +1,310 @@
+{
+ "base_gpu_mib": 0,
+ "total_mib": 6144,
+ "sizes": {
+  "6144": {
+   "main_alone": {
+    "gpu_loaded_mib": 3021,
+    "gpu_peak_mib": 3027,
+    "load_s": 14.0,
+    "rss_mib": 3010,
+    "runs": [
+     {
+      "wall_s": 3.76,
+      "prompt_n": 5387,
+      "prompt_tps": 1966,
+      "gen_tps": 53.8
+     },
+     {
+      "wall_s": 4.57,
+      "prompt_n": 5387,
+      "prompt_tps": 2074,
+      "gen_tps": 59.8
+     }
+    ]
+   },
+   "checker_alone": {
+    "gpu_loaded_mib": 2653,
+    "gpu_peak_mib": 2669,
+    "load_s": 16.5,
+    "rss_mib": 2836,
+    "runs": [
+     {
+      "wall_s": 5.64,
+      "prompt_n": 5387,
+      "prompt_tps": 1090,
+      "gen_tps": 57.3
+     },
+     {
+      "wall_s": 5.64,
+      "prompt_n": 5387,
+      "prompt_tps": 1416,
+      "gen_tps": 54.5
+     }
+    ]
+   },
+   "both_loaded_mib": 5674,
+   "main_co": [
+    {
+     "wall_s": 3.64,
+     "prompt_n": 5387,
+     "prompt_tps": 1975,
+     "gen_tps": 60.5
+    },
+    {
+     "wall_s": 5.08,
+     "prompt_n": 5387,
+     "prompt_tps": 2154,
+     "gen_tps": 58.6
+    }
+   ],
+   "checker_co": [
+    {
+     "wall_s": 4.9,
+     "prompt_n": 5387,
+     "prompt_tps": 1267,
+     "gen_tps": 61.4
+    },
+    {
+     "wall_s": 5.15,
+     "prompt_n": 5387,
+     "prompt_tps": 1529,
+     "gen_tps": 54.5
+    }
+   ],
+   "both_peak_mib": 5696,
+   "rss_co_mib": {
+    "main": 3011,
+    "checker": 2836
+   }
+  },
+  "8192": {
+   "main_alone": {
+    "gpu_loaded_mib": 3085,
+    "gpu_peak_mib": 3091,
+    "load_s": 43.9,
+    "rss_mib": 3011,
+    "runs": [
+     {
+      "wall_s": 4.47,
+      "prompt_n": 7211,
+      "prompt_tps": 2172,
+      "gen_tps": 56.9
+     },
+     {
+      "wall_s": 4.97,
+      "prompt_n": 7211,
+      "prompt_tps": 2326,
+      "gen_tps": 59.0
+     }
+    ]
+   },
+   "checker_alone": {
+    "gpu_loaded_mib": 2719,
+    "gpu_peak_mib": 2735,
+    "load_s": 59.3,
+    "rss_mib": 2835,
+    "runs": [
+     {
+      "wall_s": 6.08,
+      "prompt_n": 7211,
+      "prompt_tps": 1358,
+      "gen_tps": 53.0
+     },
+     {
+      "wall_s": 6.31,
+      "prompt_n": 7211,
+      "prompt_tps": 1610,
+      "gen_tps": 62.8
+     }
+    ]
+   },
+   "both_loaded_mib": 5804,
+   "main_co": [
+    {
+     "wall_s": 4.14,
+     "prompt_n": 7211,
+     "prompt_tps": 2403,
+     "gen_tps": 59.0
+    },
+    {
+     "wall_s": 5.05,
+     "prompt_n": 7211,
+     "prompt_tps": 2270,
+     "gen_tps": 57.5
+    }
+   ],
+   "checker_co": [
+    {
+     "wall_s": 5.54,
+     "prompt_n": 7211,
+     "prompt_tps": 1486,
+     "gen_tps": 58.1
+    },
+    {
+     "wall_s": 6.38,
+     "prompt_n": 7211,
+     "prompt_tps": 1520,
+     "gen_tps": 65.1
+    }
+   ],
+   "both_peak_mib": 5826,
+   "rss_co_mib": {
+    "main": 3011,
+    "checker": 2836
+   }
+  },
+  "16384": {
+   "main_alone": {
+    "gpu_loaded_mib": 3345,
+    "gpu_peak_mib": 3351,
+    "load_s": 41.6,
+    "rss_mib": 3011,
+    "runs": [
+     {
+      "wall_s": 8.16,
+      "prompt_n": 14393,
+      "prompt_tps": 2096,
+      "gen_tps": 52.6
+     },
+     {
+      "wall_s": 9.12,
+      "prompt_n": 14393,
+      "prompt_tps": 2304,
+      "gen_tps": 56.3
+     }
+    ]
+   },
+   "checker_alone": {
+    "gpu_loaded_mib": 2979,
+    "gpu_peak_mib": 2995,
+    "load_s": 36.3,
+    "rss_mib": 2835,
+    "runs": [
+     {
+      "wall_s": 10.19,
+      "prompt_n": 14393,
+      "prompt_tps": 1511,
+      "gen_tps": 63.8
+     },
+     {
+      "wall_s": 11.51,
+      "prompt_n": 14393,
+      "prompt_tps": 1563,
+      "gen_tps": 59.4
+     }
+    ]
+   },
+   "both_loaded_mib": 5940,
+   "main_co": [
+    {
+     "wall_s": 9.08,
+     "prompt_n": 14393,
+     "prompt_tps": 1932,
+     "gen_tps": 43.4
+    },
+    {
+     "wall_s": 8.7,
+     "prompt_n": 14393,
+     "prompt_tps": 2330,
+     "gen_tps": 59.0
+    }
+   ],
+   "checker_co": [
+    {
+     "wall_s": 11.26,
+     "prompt_n": 14393,
+     "prompt_tps": 1361,
+     "gen_tps": 61.7
+    },
+    {
+     "wall_s": 12.45,
+     "prompt_n": 14393,
+     "prompt_tps": 1411,
+     "gen_tps": 59.4
+    }
+   ],
+   "both_peak_mib": 5962,
+   "rss_co_mib": {
+    "main": 3011,
+    "checker": 2836
+   }
+  },
+  "32768": {
+   "main_alone": {
+    "gpu_loaded_mib": 3865,
+    "gpu_peak_mib": 3871,
+    "load_s": 46.3,
+    "rss_mib": 3011,
+    "runs": [
+     {
+      "wall_s": 15.1,
+      "prompt_n": 28757,
+      "prompt_tps": 2080,
+      "gen_tps": 46.8
+     },
+     {
+      "wall_s": 14.44,
+      "prompt_n": 28757,
+      "prompt_tps": 2167,
+      "gen_tps": 53.1
+     }
+    ]
+   },
+   "checker_alone": {
+    "gpu_loaded_mib": 3499,
+    "gpu_peak_mib": 3515,
+    "load_s": 40.9,
+    "rss_mib": 2836,
+    "runs": [
+     {
+      "wall_s": 21.17,
+      "prompt_n": 28757,
+      "prompt_tps": 1417,
+      "gen_tps": 52.7
+     },
+     {
+      "wall_s": 20.33,
+      "prompt_n": 28757,
+      "prompt_tps": 1478,
+      "gen_tps": 54.5
+     }
+    ]
+   },
+   "both_loaded_mib": 5956,
+   "main_co": [
+    {
+     "wall_s": 20.1,
+     "prompt_n": 28757,
+     "prompt_tps": 1543,
+     "gen_tps": 47.4
+    },
+    {
+     "wall_s": 14.61,
+     "prompt_n": 28757,
+     "prompt_tps": 2138,
+     "gen_tps": 52.3
+    }
+   ],
+   "checker_co": [
+    {
+     "wall_s": 24.93,
+     "prompt_n": 28757,
+     "prompt_tps": 1202,
+     "gen_tps": 46.1
+    },
+    {
+     "wall_s": 20.4,
+     "prompt_n": 28757,
+     "prompt_tps": 1473,
+     "gen_tps": 53.6
+    }
+   ],
+   "both_peak_mib": 5978,
+   "rss_co_mib": {
+    "main": 3011,
+    "checker": 2836
+   }
+  }
+ }
+}

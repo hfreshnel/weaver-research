@@ -1,0 +1,23 @@
+	Command being timed: "python3 -I bench/coresidence/ctx_sweep.py models/qwen3.5-4b/Qwen3.5-4B-Q4_K_M.gguf models/bonsai-2-9b/Ternary-Bonsai-2-9B-Q2_0.gguf --extra -np 1 -ub 256 -b 256 --cache-ram 1024"
+	User time (seconds): 890.42
+	System time (seconds): 288.40
+	Percent of CPU this job got: 115%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 17:03.02
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3084264
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 67481
+	Minor (reclaiming a frame) page faults: 17205410
+	Voluntary context switches: 370555
+	Involuntary context switches: 3796
+	Swaps: 0
+	File system inputs: 15944624
+	File system outputs: 696
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
