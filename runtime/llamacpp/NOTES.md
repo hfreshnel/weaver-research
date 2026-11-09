@@ -37,3 +37,5 @@ cd runtime/llamacpp/bin
 curl -sL -o llama-cpu.tar.gz https://github.com/ggml-org/llama.cpp/releases/download/b11887/llama-b11887-bin-ubuntu-x64.tar.gz
 tar xzf llama-cpu.tar.gz && mv llama-b11887 cpu-b11887 && rm llama-cpu.tar.gz
 ```
+
+Or run `runtime/llamacpp/fetch.sh [cpu|cuda|all]` (same commands; skips builds already present).
